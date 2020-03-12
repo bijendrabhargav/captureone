@@ -1,0 +1,82 @@
+<h1>Question Bank Master</h1>
+<form class="wrapper" [@slideInOutAnimation]="isOpen?'open': 'closed'">
+    <div class="field">
+        <label for="courses">Course</label>
+        <div class="dropdown">
+            <select name="courses">
+                <option value="Course 1" selected="selected">Course 1</option>
+                <option value="Course 2">Course 2</option>
+                <option value="Coures 3">Course 3</option>
+                <option value="Course 4">Course 4</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+    <div class="field">
+        <label>Question</label>
+        <input type="text" placeholder="Enter Question" />
+    </div>
+    <div class="field">
+        <label>Option A</label>
+        <input type="text" placeholder="Enter Option A" />
+    </div>
+    <div class="field">
+        <label>Option B</label>
+        <input type="text" placeholder="Enter Option B" />
+    </div>
+    <div class="field">
+        <label>Option C</label>
+        <input type="text" placeholder="Enter Option C" />
+    </div>
+    <div class="field">
+        <label>Option D</label>
+        <input type="text" placeholder="Enter Option D" />
+    </div>
+    <div class="bigfield">
+        <label for="answer">Event Type</label>
+        <div class="innerfield">
+            <label for="a">Option A<input type="radio" id="a" name="answer" value="A"></label>
+            <label for="c">Option C<input type="radio" id="c" name="answer" value="C"></label>
+        </div>
+        <div class="innerfield">
+            <label for="b">Option B<input type="radio" id="b" name="answer" value="B"></label>  
+            <label for="d">Option D<input type="radio" id="d" name="answer" value="C"></label>
+        </div>
+    </div>
+    <div class="field">
+        <label>Status</label>
+        <input type="text" placeholder="Default-Active/1" />
+    </div>
+    <h3>OR</h3>
+    <div class="filefield">
+        <label>Question Bank file:</label>
+        <input type="file" placeholder="Only .xslx or .xls files"/>
+    </div>
+    <button class="submit" type="submit">Submit</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Name</th>
+                <th>Work</th>
+                <th>email</th>
+                <th>dob</th>
+                <th>address</th>
+                <th>city</th>
+                <th>opted</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of jsonData">
+                <th>{{item.id}}</th>
+                <td>{{item.name}}</td>
+                <td>{{item.work}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.dob}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.city}}</td>
+                <td>{{item.optedin}}</td>
+            </tr>
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,85 @@
+<h1>Event Master</h1>
+<form class="wrapper" [@slideInOutAnimation]="isOpen?'open': 'closed'">
+    <div class="field">
+        <label>Event Name</label>
+        <input type="text" placeholder="Enter Event Name" />
+    </div>
+    <div class="field">
+        <label>Event Description</label>
+        <input type="text" placeholder="Enter Event Descriptions" />
+    </div>
+    <div class="field">
+        <label>Event Agenda</label>
+        <textarea placeholder="Enter Event Agenda"></textarea>
+    </div>
+    <div class="field">
+        <label for="fee">Event Type</label>
+        <div class="innerfield">
+            <label for="free">Free</label>
+                <input type="radio" id="free" name="fee" value="Free">
+            <label for="paid">Paid</label>
+                <input type="radio" id="paid" name="fee" value="Paid">
+        </div>
+    </div>
+    <div class="field">
+        <label>Event Place</label>
+        <input type="text" placeholder="Enter Event Place" />
+    </div>
+    <div class="field">
+        <label>Event Date</label>
+        <input class="input" type="text" placeholder="Enter Course Date" />
+    </div>
+    <div class="field">
+        <label for="timings">Event Timings</label>
+        <div class="innerfield" name="timings">
+            <label for="start">Start Time</label>
+            <input  name="start" type="time"/>
+            <label for="end">End Time</label>
+            <input name="end" type="time" />
+        </div>
+    </div>
+    <div class="field">
+        <label>Entry Fee</label>
+        <input class="input" type="number" placeholder="Enter Entry Fee" />
+    </div>
+    <div class="field">
+        <label for="status">Status</label>
+        <div class="innerfield">
+            <input type="radio" id="active" name="status" value="Active"><label for="active">Active</label>
+            <input type="radio" id="deactive" name="status" value="Deactive"><label for="deactive">Deactive</label>
+        </div>
+    </div>
+    <div class="field">
+        <label for="image">Image</label>
+        <input name="image" type="file" />
+    </div>
+    <button class="submit" type="submit">Submit</button>
+    <div class="field">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Name</th>
+                    <th>Work</th>
+                    <th>email</th>
+                    <th>dob</th>
+                    <th>address</th>
+                    <th>city</th>
+                    <th>opted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of jsonData">
+                    <th>{{item.id}}</th>
+                    <td>{{item.name}}</td>
+                    <td>{{item.work}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.dob}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.city}}</td>
+                    <td>{{item.optedin}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>

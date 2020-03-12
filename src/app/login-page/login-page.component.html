@@ -1,0 +1,19 @@
+<div class="bckgrnd" [@slideInOutAnimation]="isOpen?'open': 'closed'">
+    <form class="wrapper" [formGroup]="userDetails" (ngSubmit)="onFormSubmit()">
+        <div class="field">
+            <label>Email ID</label>
+            <input type="email" placeholder="Enter Username" formControlName="username" />
+        </div>
+        <p class="error" *ngIf="userDetails.get('username').invalid && userDetails.get('username').dirty">Invalid Username</p>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password" formControlName="password" />
+        </div>
+        <p class="error" *ngIf="userDetails.get('password').invalid && userDetails.get('password').dirty">Invalid Password</p>
+        <label for="rmmbrme"><input id="rmmbrme" type="checkbox" checked/>Remember Me</label>
+        <div class="controls">
+            <button class="submit" type="submit" [disabled]="!userDetails.valid">Login</button>
+            <button class="reset" type="button">Forgot Password</button>
+        </div>
+    </form>
+</div>

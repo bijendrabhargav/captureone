@@ -1,0 +1,27 @@
+<nav class="sidebar" *ngIf="loggedIn$" [@slideInOutAnimation]="isOpen ? 'open' : 'closed'">
+    <li [routerLink]="['./courses']">Course Master</li>
+    <li [routerLink]="['./achievements']">Achievements</li>
+    <li [routerLink]="['./gallery']">Event Photo Gallery</li>
+    <li [routerLink]="['./events']">Event Master</li>
+    <li [routerLink]="['./content']"> LMS Content Master</li>
+    <li [routerLink]="['./qbank']">Question Bank Master</li>
+    <li (click)="goback()">Back</li>
+</nav>
+<nav class="navbar" *ngIf="loggedIn$" #container>
+    <main (click)="isOpen=!isOpen" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </main>
+    <div>
+        <ul class="menu" [@slideInOutAnimation]="isOpen ? 'open' : 'closed'" *ngIf="isOpen" #navbar>
+            <li [routerLink]="['./courses']">Course Master</li>
+            <li [routerLink]="['./achievements']">Achievements</li>
+            <li [routerLink]="['./gallery']">Event Photo Gallery</li>
+            <li [routerLink]="['./events']">Event Master</li>
+            <li [routerLink]="['./content']"> LMS Content Master</li>
+            <li [routerLink]="['./qbank']">Question Bank Master</li>
+            <li (click)="goback()">Back</li>
+        </ul>
+    </div>
+</nav>

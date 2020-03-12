@@ -1,0 +1,12 @@
+<router-outlet name="header"></router-outlet>
+<div class="wrapper home" [@slideInOutAnimation]="isOpen?'open': 'closed'">
+    <p *ngIf="display()">Welcome to Skilling You!</p>
+    <div class="main">
+        <div class="navigation">
+            <router-outlet name="sidedrawer"></router-outlet>
+        </div>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

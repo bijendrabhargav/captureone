@@ -1,0 +1,54 @@
+<h1>Course Master</h1>
+<form class="wrapper" [@slideInOutAnimation]="isOpen?'open': 'closed'">
+    <div class="field">
+        <label>Course Name</label>
+        <input type="text" placeholder="Enter Course Name" />
+    </div>
+    <div class="field">
+        <label>Course Description</label>
+        <input type="text" placeholder="Enter Course Descriptions" />
+    </div>
+    <div class="field">
+        <label>Course Type</label>
+        <input type="text" placeholder="Enter Course Type" />
+    </div>
+    <div class="field">
+        <label>Course Duration</label>
+        <input type="text" placeholder="Enter Course Duration" />
+    </div>
+    <div class="field">
+        <label>Course Price</label>
+        <input type="text" placeholder="Enter Course Price" />
+    </div>
+    <div class="field">
+        <label>Status</label>
+        <input type="text" placeholder="Enter Course Status" />
+    </div>
+    <button class="submit" type="submit">Submit</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Name</th>
+                <th>Work</th>
+                <th>email</th>
+                <th>dob</th>
+                <th>address</th>
+                <th>city</th>
+                <th>opted</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of jsonData">
+                <th>{{item.id}}</th>
+                <td>{{item.name}}</td>
+                <td>{{item.work}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.dob}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.city}}</td>
+                <td>{{item.optedin}}</td>
+            </tr>
+        </tbody>
+    </table>
+</form>
