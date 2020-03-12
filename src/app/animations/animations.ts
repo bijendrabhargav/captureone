@@ -14,4 +14,17 @@ export const slideInOutAnimation = trigger('slideInOutAnimation', [
   ])
 ]);
 
+export const zoomInOutAnimation = trigger('zoomInOutAnimation', [
+  state('void', style({})),
+  state('*', style({'z-index': 100})),
+  transition(':enter', [
+    style({transform: 'scale(0, 0)', opacity: 1}),
+    animate('0.4s ease-in-out', style({transform: 'scale(1, 1)', opacity: 1}))
+  ]),
+  transition(':leave', [
+    style({transform: 'scale(1, 1)', opacity: 0}),
+    animate('0.4s ease-in-out', style({transform: 'scale(0, 0)', opacity: 0}))
+  ]),
+]);
+
 

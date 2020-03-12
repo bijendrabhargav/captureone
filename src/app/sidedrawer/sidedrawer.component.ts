@@ -1,19 +1,20 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 
 import { AuthService } from '../auth.service';
-import { slideInOutAnimation } from '../animations/animations';
+import { slideInOutAnimation, zoomInOutAnimation } from '../animations/animations';
 
 @Component({
   selector: 'app-sidedrawer',
   templateUrl: './sidedrawer.component.html',
-  animations: [slideInOutAnimation]
+  animations: [slideInOutAnimation, zoomInOutAnimation]
 })
 
 export class SidedrawerComponent {
   isOpen = false;
   loggedIn$: Observable<boolean>;
+  menuOpen = true;
 
   @ViewChild('container') container: ElementRef;
 
@@ -40,4 +41,3 @@ export class SidedrawerComponent {
     }
 }
 }
-

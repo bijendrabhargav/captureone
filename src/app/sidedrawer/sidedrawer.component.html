@@ -8,7 +8,7 @@
     <li (click)="goback()">Back</li>
 </nav>
 <nav class="navbar" *ngIf="loggedIn$" #container>
-    <main (click)="isOpen=!isOpen" class="hamburger">
+    <main [@zoomInOutAnimation]="menuOpen" (click)="isOpen=!isOpen" class="hamburger">
         <span></span>
         <span></span>
         <span></span>

@@ -172,7 +172,6 @@ td {
         z-index: 99999999;
         width: 25px;
         height: 25px;
-        cursor: pointer;
         padding: 10px;
         overflow: hidden;
         outline: 0px;
@@ -399,11 +398,17 @@ td {
     }
 
     .logout {
-        text-align: right;
-        vertical-align: middle;
-        position: absolute;
-        top: 3%;
-        right: 5%;
+        position: fixed;
+        top: 2.5%;
+        right: 2.5%;
+        height: 5%;
+        align-self: center;
+        border-radius: 50px;
+        z-index: 99999999;
+        width: 25px;
+        height: 25px;
+        padding: 10px;
+        outline: 0px;
     }
 
     .logout > span {
@@ -414,10 +419,6 @@ td {
         position: absolute;
         width: 20px;
         border-radius: 50px;
-    }
-
-    .logout > span:hover {
-        cursor: pointer;
     }
 
     div.vertical-line{

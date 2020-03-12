@@ -8,8 +8,7 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  animations: [slideInOutAnimation],
-  providers: [AuthService]
+  animations: [slideInOutAnimation]
 })
 export class LoginPageComponent  {
   isOpen = false;

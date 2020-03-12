@@ -3,7 +3,7 @@
         <div class="logo">
             <img src="../../assets//logo.png" class="picture" alt="Slow Internet" />
         </div>
-        <div class="logout" *ngIf="loggedIn$" (click)="onLogout()">
+        <div [@zoomInOutAnimation]="isOpen? 'open' : 'closed'" class="logout" (click)="onLogout()">
             <span>
                 <div class="vertical-line"></div>
             </span>
